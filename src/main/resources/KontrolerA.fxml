@@ -14,14 +14,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('ZDJwaluty_1.jpg'); -fx-background-image: url('ZDJwaluty_1.jpg');" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kontroler">
    <children>
-      <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="546.0" prefWidth="636.0" style= "blue">
+      <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="470.0" prefWidth="594.0" style="-fx-background-image: blue;">
          <children>
-            <ImageView fitHeight="641.0" fitWidth="645.0" layoutX="-6.0" opacity="0.76" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="1000.0" fitWidth="1000.0" layoutX="-6.0" opacity="0.76" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@ZDJwaluty_1.jpg" />
                </image>
             </ImageView>
-          <Button id="Kantor1913B" layoutX="19.0" layoutY="278.0" mnemonicParsing="false" style="-fx-background-color: silver;" text="Kantor 1913">
+          <Button id="Kantor1913B" layoutX="19.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: silver;" text="Kantor1913">
                <font>
                   <Font size="24.0" />
                </font>
@@ -66,7 +66,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-          <Button id="KantorHouseB" layoutX="19.0" layoutY="211.0" mnemonicParsing="false" style="-fx-background-color: silver;" text="Kantor House">
+          <Button id="KantorHouseB" layoutX="19.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: silver;" text="KantorHouse">
                <font>
                   <Font size="24.0" />
                </font>
@@ -90,7 +90,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button id="KantorKardialB" layoutX="19.0" layoutY="156.0" mnemonicParsing="false" style="-fx-background-color: silver;" text="Kantor Kardial">
+            <Button id="KantorKardialB" layoutX="19.0" layoutY="156.0" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: silver;" text="KantorKardial">
                <font>
                   <Font name="Times New Roman" size="24.0" />
                </font>
@@ -114,7 +114,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button id="KantorPGB" layoutX="22.0" layoutY="98.0" mnemonicParsing="false" style="-fx-background-color: silver;" text="Kantor P&amp;G">
+            <Button id="KantorPGB" layoutX="22.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleButtonClick" style="-fx-background-color: silver;" text="KantorP&amp;G">
                <font>
                   <Font name="Times New Roman" size="24.0" />
                </font>

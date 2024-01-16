@@ -16,19 +16,16 @@ public class MainApp extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        logger.info("Aplikacja startuje...");
-
-        // Twój kod
-
-        logger.info("Aplikacja zakończona.");
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("KontrolerA.fxml"));
         primaryStage.setTitle("Waluty");
-        primaryStage.setScene(new Scene(root,800,500));
+        primaryStage.setScene(new Scene(root,500,500));
         primaryStage.show();
+
+
     }
     @Override
     public void stop() {
