@@ -24,19 +24,27 @@ public class Kontroler {
             try {
                 Button clickedButton = (Button) event.getSource();
                 String buttonText = clickedButton.getText();
-                System.out.println("Kliknięto przycisk: " + buttonText + ".fxml");
+                System.out.println("Kliknięto przycisk: " + buttonText );
+                if (buttonText.equals("Powrót do MENU")){
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("KontrolerA.fxml"));
+                    Parent root = loader.load();
 
-                // Wczytaj nowy widok FXML
-                FXMLLoader loader = new FXMLLoader(getClass().getResource(buttonText + ".fxml"));
-                Parent root = loader.load();
+                    // Ustaw nowy widok w istniejącym oknie
+                    Stage stage = (Stage) clickedButton.getScene().getWindow();
+                    stage.setScene(new Scene(root));
+                }
+                else {
+                    // Wczytaj nowy widok FXML
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource(buttonText + ".fxml"));
+                    Parent root = loader.load();
 
-                // Tutaj możesz dodać logikę do obsługi nowego widoku
-                // ...
+                    // Tutaj możesz dodać logikę do obsługi nowego widoku
+                    // ...
 
-                // Przykład: Ustaw nowy widok w istniejącym oknie
-                Stage stage = (Stage) clickedButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-
+                    // Przykład: Ustaw nowy widok w istniejącym oknie
+                    Stage stage = (Stage) clickedButton.getScene().getWindow();
+                    stage.setScene(new Scene(root));
+                }
             } catch (IOException e) {
                 e.printStackTrace();
                 // Obsłuż wyjątek ładowania pliku FXML
