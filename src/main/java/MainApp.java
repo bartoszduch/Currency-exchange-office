@@ -9,7 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javafx.scene.Parent;
 import javax.imageio.IIOException;
-
+import javafx.scene.control.Button;
 public class MainApp extends Application {
 
     private static final Logger logger = LogManager.getLogger(MainApp.class);
