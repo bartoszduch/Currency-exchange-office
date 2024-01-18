@@ -12,9 +12,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('ZDJwaluty_1.jpg'); -fx-background-image: url('ZDJwaluty_1.jpg');" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kontroler">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-image: url('ZDJwaluty_1.jpg'); -fx-background-image: url('ZDJwaluty_1.jpg');" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kontroler">
    <children>
-      <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="470.0" prefWidth="594.0" style="-fx-background-image: blue;">
+      <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="500.0" style="-fx-background-image: url('ZDJwaluty_1.jpg');">
          <children>
             <ImageView fitHeight="1000.0" fitWidth="1000.0" layoutX="-6.0" opacity="0.76" pickOnBounds="true" preserveRatio="true">
                <image>
