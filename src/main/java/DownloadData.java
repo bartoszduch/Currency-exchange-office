@@ -22,7 +22,7 @@ public class DownloadData extends CurrentDate{
 
             int printedRows = 0;
             for (Element row : tableRows) {
-                if (printedRows >= 2 && printedRows < 18) {
+                if (printedRows >= 2 && printedRows < 17) {
                     Elements columns = row.select("td");
 
                     if (columns.size() >= 4) {
@@ -37,7 +37,7 @@ public class DownloadData extends CurrentDate{
                 }
                 printedRows++;
 
-                if (printedRows >= 60) {
+                if (printedRows >= 20) {
                     break;
                 }
             }
