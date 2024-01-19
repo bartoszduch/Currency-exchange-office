@@ -1,5 +1,4 @@
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +9,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Optional;
 
 public class Kontroler1913 {
 
@@ -26,17 +28,58 @@ public class Kontroler1913 {
     public TableColumn<DownloadData.CurrencyData, String> sellColumn;
 
     public void initialize() {
-        currencyColumn.setCellValueFactory(new PropertyValueFactory<>("currencyName"));
-        buyColumn.setCellValueFactory(new PropertyValueFactory<>("buyRate"));
-        sellColumn.setCellValueFactory(new PropertyValueFactory<>("sellRate"));
-        ObservableList<DownloadData.CurrencyData> data = FXCollections.observableArrayList(
 
-        );
+            if (isInternetConnectionAvailable()) {
+                currencyColumn.setCellValueFactory(new PropertyValueFactory<>("currencyName"));
+                buyColumn.setCellValueFactory(new PropertyValueFactory<>("buyRate"));
+                sellColumn.setCellValueFactory(new PropertyValueFactory<>("sellRate"));
 
-        currencyTable.setItems(DownloadData.downloadAndPopulateTable("https://kantor.live/kantory/krakow/603758-kantor-1913"));
+                currencyTable.setItems(DownloadData.downloadAndPopulateTable("https://kantor.live/kantory/krakow/603758-kantor-1913"));
+            } else {
+                showNoInternetConnectionAlert();
+            }
     }
 
+    private void showConnectionErrorAlert() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Błąd połączenia");
+        alert.setHeaderText("Błąd podczas nawiązywania połączenia z serwerem");
+        alert.setContentText("Sprawdź swoje połączenie internetowe i spróbuj ponownie.");
 
+        ButtonType exitButton = new ButtonType("Zamknij", ButtonBar.ButtonData.OK_DONE);
+        alert.getButtonTypes().setAll(exitButton);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == exitButton) {
+            Platform.exit();
+        }
+    }
+
+    private boolean isInternetConnectionAvailable() {
+        try {
+            URL url = new URL("https://www.google.com");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.connect();
+            return connection.getResponseCode() == 200;
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+    private void showNoInternetConnectionAlert() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Błąd połączenia");
+        alert.setHeaderText("Brak połączenia z internetem");
+        alert.setContentText("Proszę sprawdzić swoje połączenie internetowe.");
+
+        ButtonType exitButton = new ButtonType("Zamknij", ButtonBar.ButtonData.OK_DONE);
+        alert.getButtonTypes().setAll(exitButton);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == exitButton) {
+            Platform.exit();
+        }
+    }
 
     public void handleButtonClick(ActionEvent event) {
         if (event.getSource() instanceof Button) {

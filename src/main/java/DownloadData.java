@@ -1,8 +1,5 @@
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DownloadData extends CurrentDate{
+public class DownloadData {
     public static ObservableList<CurrencyData> downloadAndPopulateTable(String url) {
         ObservableList<CurrencyData> data = FXCollections.observableArrayList();
 
