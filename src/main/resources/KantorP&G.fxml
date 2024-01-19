@@ -2,8 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kontroler">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KontrolerPG">
    <children>
       <ImageView fitHeight="445.0" fitWidth="644.0" layoutX="-9.0" opacity="0.81">
          <image>
@@ -55,12 +55,12 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TreeTableView layoutX="10.0" layoutY="91.0" prefHeight="300.0" prefWidth="577.0">
+      <TableView fx:id="currencyTable" layoutX="73.0" layoutY="93.0" prefHeight="300.0" prefWidth="450.0">
          <columns>
-            <TreeTableColumn prefWidth="160.00000762939453" text="WALUTA" />
-            <TreeTableColumn prefWidth="215.20001220703125" text="KUPNO" />
-            <TreeTableColumn prefWidth="174.39993286132812" text="SPRZEDAŻ" />
+            <TableColumn fx:id="currencyColumn" prefWidth="150.0" text="WALUTA" />
+            <TableColumn fx:id="buyColumn" prefWidth="150.0" resizable="false" text="KURS KUPNA" />
+            <TableColumn fx:id="sellColumn" prefWidth="150.0" text="KURS SPRZEDAŻY" />
          </columns>
-      </TreeTableView>
+      </TableView>
    </children>
 </AnchorPane>

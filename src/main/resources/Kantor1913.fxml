@@ -3,14 +3,14 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" opacity="0.89" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kontroler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" opacity="0.89" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kontroler1913">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1000.0" layoutX="-282.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -32,13 +32,13 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TreeTableView fx:id="currencyTable" layoutX="62.0" layoutY="118.0" prefHeight="300.0" prefWidth="577.0">
-         <columns>
-            <TreeTableColumn fx:id="currencyColumn" prefWidth="160.00000762939453" text="WALUTA" />
-            <TreeTableColumn fx:id="buyColumn" prefWidth="215.20001220703125" text="KUPNO" />
-            <TreeTableColumn fx:id="sellColumn" prefWidth="174.39993286132812" text="SPRZEDAŻ" />
-         </columns>
-      </TreeTableView>
+      <TableView fx:id  ="currencyTable" layoutX="133.0" layoutY="167.0" prefHeight="300.0" prefWidth="450.0">
+        <columns>
+          <TableColumn fx:id="currencyColumn" prefWidth="150.0" text="WALUTA" />
+          <TableColumn fx:id="buyColumn" prefWidth="150.0" resizable="false" text="KURS KUPNA" />
+            <TableColumn fx:id="sellColumn" prefWidth="150.0" text="KURS SPRZEDAŻY" />
+        </columns>
+      </TableView>
    </children>
    <cursor>
       <Cursor fx:constant="DEFAULT" />
